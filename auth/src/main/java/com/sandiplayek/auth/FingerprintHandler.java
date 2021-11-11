@@ -52,7 +52,9 @@ public class FingerprintHandler  extends FingerprintManager.AuthenticationCallba
         this.context = context;
         this.onResponseListener = onResponseListener;
 
-        if(PermissionChecking.checkMarshmallowOrUpper(context)){
+        if(!PermissionChecking.checkMarshmallowOrUpper(context)) {
+            onResponseListener.onResponse("Sorry! Your mobile phone version is lower than Marshmallow");
+        }else{
             keyguardManager = (KeyguardManager) context.getSystemService(KEYGUARD_SERVICE);
             fingerprintManager = (FingerprintManager) context.getSystemService(FINGERPRINT_SERVICE);
 
@@ -86,8 +88,6 @@ public class FingerprintHandler  extends FingerprintManager.AuthenticationCallba
                     }
                 }
             }
-        }else{
-            onResponseListener.onResponse("Sorry! Your mobile phone version is lower than Marshmallow");
         }
     }
 
