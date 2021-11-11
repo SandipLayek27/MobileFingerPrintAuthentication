@@ -94,7 +94,6 @@ public class FingerprintHandler  extends FingerprintManager.AuthenticationCallba
     @Override
     public void onAuthenticationError(int errMsgId, CharSequence errString) {
         onResponseListener.onResponse("Fingerprint Authentication error");
-        //this.update("Fingerprint Authentication error\n" + errString, false);
     }
 
     @Override
