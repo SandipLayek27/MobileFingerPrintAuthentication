@@ -27,7 +27,9 @@ dependencies {
 ```
 
 # ★ Add to manifest.xml
+```sh
 <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+```
 
 # ★ Useful Features
 Activate fingerprint Sensor
